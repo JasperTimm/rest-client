@@ -616,7 +616,6 @@ module RestClient
     end
 
     def log_request
-      byebug
       return unless RestClient.log
 
       out = []
@@ -631,7 +630,7 @@ module RestClient
         "[invalid uri]"
       end
 
-      out << "RestClient.#{method} #{sanitized_url.inspect}"
+      out << "JTsRestClient.#{method} #{sanitized_url.inspect}"
       out << payload.short_inspect if payload
       out << processed_headers.to_a.sort.map { |(k, v)| [k.inspect, v.inspect].join("=>") }.join(", ")
       RestClient.log << out.join(', ') + "\n"
