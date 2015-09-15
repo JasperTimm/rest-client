@@ -616,6 +616,7 @@ module RestClient
     end
 
     def log_request
+      byebug
       return unless RestClient.log
 
       out = []
